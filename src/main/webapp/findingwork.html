@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <title>Home</title>
+</head>
+<body class="lift:content_id=main">
+<div id="main" class="lift:surround?with=default;at=content">
+<link rel="stylesheet" type="text/css" href="css/jquery.multiselect.css"/>
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.multiselect.js"></script>
+    <script type="text/javascript">
+        $(function(){
+
+            $("#byPos").multiselect({
+            });
+
+            $("#byloc").multiselect({
+            });
+
+        });
+    </script>
+<form class="lift:findingwork">
+    <h3>选择职位分类: </h3>
+    <input id="byPos" type="search"/>
+    <hr/>
+    <h3>选择工作地点: </h3>
+    <input id="byloc" type="search"/>
+    <hr/>
+    <button type="submit">搜索职位</button>
+    <input type="hidden" id="hidden"/>
+
+</form>
+</div>
+</body>
+</html>

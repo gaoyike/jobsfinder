@@ -1,0 +1,11 @@
+update
+gen-idea
+reload
+ls
+reboot
+update
+container:start
+reboot
+update
+gen-idea
+pro

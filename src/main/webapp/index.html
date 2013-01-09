@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Home</title>
+    <style type="text/css">
+        #showshow_all {
+            font-size: 8px;
+        }
+    </style>
+</head>
+<body class="lift:content_id=main">
+<div id="main" class="lift:surround?with=default;at=content">
+    <div class="lift:msgs">
+        <lift:error_class>error</lift:error_class>
+        <lift:warning_class>notice</lift:warning_class>
+        <lift:notice_class>success</lift:notice_class>
+    </div>
+
+    <form class="lift:findJob">
+        <h3>搜索职位: </h3>
+        <p>地区: <input id="searchArea" type="search"/></p>
+        <p>职位: <input id="searchposition" type="search"/>   <button type="submit">马上搜索职位</button> </p>
+        <div class="lift:comet?type=hotjobs">
+            <h3>热门职位: </h3>
+
+            <div id="hot"></div>
+            <input type="hidden" id="hidden"/>
+        </div>
+    </form>
+
+
+</div>
+</body>
+</html>

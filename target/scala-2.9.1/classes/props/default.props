@@ -1,0 +1,4 @@
+mail.smtp.auth=true
+mail.user=me@example.org
+mail.password=correct horse battery staple
+mail.smtp.host=smtp.sendgrid.net

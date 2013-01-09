@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <title>Home</title>
+</head>
+<body class="lift:content_id=main">
+<div id="main" class="lift:surround?with=default;at=content">
+    <script type="text/javascript">
+        /*
+         *  How to load a feed via the Feeds API.
+         */
+
+        google.load("feeds", "1");
+
+        // Our callback function, for when a feed is loaded.
+        function feedLoaded(result) {
+            if (!result.error) {
+                // Grab the container we will put the results into
+                var container = document.getElementById("dyfeedcontent");
+                container.innerHTML = '';
+
+                // Loop through the feeds, putting the titles onto the page.
+                // Check out the result object for a list of properties returned in each entry.
+                // http://code.google.com/apis/ajaxfeeds/documentation/reference.html#JSON
+                for (var i = 0; i < result.feed.entries.length; i++) {
+                    var entry = result.feed.entries[i];
+                    var div = document.createElement("div");
+                    div.appendChild(document.createTextNode(entry.title));
+                    container.appendChild(div);
+                }
+            }
+        }
+
+        function OnLoad() {
+            var feeds = [
+                {
+                    title: '科技要闻',
+                    url: 'http://rss.sina.com.cn/tech/rollnews.xml'
+                },
+                {
+                    title: '互联网新闻',
+                    url: 'http://rss.sina.com.cn/tech/internet/home28.xml'
+                },
+                {
+                    title: '业界新闻',
+                    url: 'http://rss.sina.com.cn/tech/it/gn37.xml'
+                }
+            ];
+
+            var options = {
+                stacked : true,
+                horizontal : false,
+                title : "IT行业动态"
+
+            };
+
+            new GFdynamicFeedControl(feeds, 'dyfeedcontent', options);
+            document.getElementById('dyfeedcontent').style.width = "971px";
+            document.getElementById('dyfeedcontent').style.height = "519px";
+            document.getElementById('dyfeedcontent').style.marginLeft="-60px";
+            document.getElementById('dyfeedcontent').style.marginTop="-60px";
+
+        }
+
+
+        google.setOnLoadCallback(OnLoad);
+    </script>
+    <div id="dyfeedcontent">
+        Loading..
+    </div>
+</div>
+</body>
+</html>
